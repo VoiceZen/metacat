@@ -1,8 +1,10 @@
 # Metacat
 
-Fork from netflix metacat. Major differences
+Fork from netflix metacat. 
+Goals of this repo that are not in alignment with metacat.
 1. Connectors not part of repo
 1. ES as primary storage
+No timelines as usual :)
 
 ## Introduction
 
