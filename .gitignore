@@ -76,3 +76,6 @@ metacat-functional-tests/metacat-test-cluster/build/
 
 # IDE mess
 bin
+
+# local data
+localdata

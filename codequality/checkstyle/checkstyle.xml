@@ -93,7 +93,8 @@
         <module name="FinalClass"/>
 
         <!-- Ensures that local variables that never get their values changed, must be declared final. -->
-        <module name="FinalLocalVariable"/>
+        <!-- if they get that lombok val is final will use it -->
+<!--        <module name="FinalLocalVariable"/>-->
 
         <!-- Check that method/constructor/catch/foreach parameters are final. -->
         <module name="FinalParameters"/>
@@ -130,12 +131,12 @@
         <module name="InterfaceIsType"/>
 
         <!-- Checks the Javadoc of a method or constructor. -->
-        <module name="JavadocMethod">
-            <property name="scope" value="public"/>
-            <property name="allowThrowsTagsForSubclasses" value="true"/>
-            <property name="allowUndeclaredRTE" value="true"/>
-            <property name="allowMissingPropertyJavadoc" value="true"/>
-        </module>
+<!--        <module name="JavadocMethod">-->
+<!--            <property name="scope" value="public"/>-->
+<!--            <property name="allowThrowsTagsForSubclasses" value="true"/>-->
+<!--            <property name="allowUndeclaredRTE" value="true"/>-->
+<!--            <property name="allowMissingPropertyJavadoc" value="true"/>-->
+<!--        </module>-->
 
         <!-- Custom Checkstyle Check to validate Javadoc. -->
         <module name="JavadocStyle">
@@ -143,15 +144,15 @@
         </module>
 
         <!-- Checks the Javadoc of a type. -->
-        <module name="JavadocType">
-            <property name="scope" value="public"/>
-        </module>
+<!--        <module name="JavadocType">-->
+<!--            <property name="scope" value="public"/>-->
+<!--        </module>-->
 
         <!-- Checks that a variable has Javadoc comment. -->
-        <module name="JavadocVariable">
-            <property name="scope" value="public"/>
-            <property name="ignoreNamePattern" value="Counter..*|Tracer..*|Gauge..*"/>
-        </module>
+<!--        <module name="JavadocVariable">-->
+<!--            <property name="scope" value="public"/>-->
+<!--            <property name="ignoreNamePattern" value="Counter..*|Tracer..*|Gauge..*"/>-->
+<!--        </module>-->
 
         <!-- Checks the placement of left curly braces on types, methods and other blocks. -->
         <module name="LeftCurly"/>

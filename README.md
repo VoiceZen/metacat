@@ -29,7 +29,7 @@ FLUSH PRIVILEGES;
 
 
 ./gradlew build -x test
-java -Dmetacat.plugin.config.location=./local/catalog/ -Dmetacat.usermetadata.config.location=./local/usermetadata.properties -jar  metacat-app/build/libs/metacat-app-1.3.0-SNAPSHOT.jar
+java -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,address=5035,server=y,suspend=n -Dmetacat.plugin.config.location=./local/catalog/ -Dmetacat.usermetadata.config.location=./local/usermetadata.properties -jar  metacat-app/build/libs/metacat-app-1.3.0-SNAPSHOT.jar
 
 
 http://localhost:8080/swagger-ui.html
@@ -67,3 +67,32 @@ and we can now browse to
 http://others.local.ai/metacat/
 ```
 
+### Configuration  
+The catalog in local folder provides examples of mysql and file based catalog service.
+
+Stock Netflix implementation provides a lot more.
+
+Catalog folder lists files, each file is treated as a catalog shard, the type is provided by connector.name property.
+e.g indiamart-store will provide a catalog called indiamart-store, 
+this catalog details will be filled in by file type handler connector as 
+connector.name=file in the properties file
+```
+@see com.netflix.metacat.main.manager.CatalogManager.loadCatalog
+```
+Rest of the parameters are passed as a map via ConnectorContext
+
+
+### Dev Quickstart
+```
+listNames:53, FileConnectorDatabaseService (com.netflix.metacat.connector.file)
+lambda$get$2:94, CatalogServiceImpl (com.netflix.metacat.main.services.impl)
+accept:-1, 1941458968 (com.netflix.metacat.main.services.impl.CatalogServiceImpl$$Lambda$1488)
+forEach:75, Iterable (java.lang)
+get:85, CatalogServiceImpl (com.netflix.metacat.main.services.impl)
+lambda$getCatalog$13:513, MetacatController (com.netflix.metacat.main.api.v1)
+get:-1, 952671124 (com.netflix.metacat.main.api.v1.MetacatController$$Lambda$1485)
+processRequest:117, RequestWrapper (com.netflix.metacat.main.api)
+getCatalog:510, MetacatController (com.netflix.metacat.main.api.v1)
+getCatalog:500, MetacatController (com.netflix.metacat.main.api.v1)
+
+```
