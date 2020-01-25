@@ -73,7 +73,7 @@ The catalog in local folder provides examples of mysql and file based catalog se
 Stock Netflix implementation provides a lot more.
 
 Catalog folder lists files, each file is treated as a catalog shard, the type is provided by connector.name property.
-e.g indiamart-store will provide a catalog called indiamart-store, 
+e.g mart-store will provide a catalog called mart-store, 
 this catalog details will be filled in by file type handler connector as 
 connector.name=file in the properties file
 ```
